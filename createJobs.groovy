@@ -8,9 +8,8 @@ job('get_containers') {
         }
     }
 
-    dir('get_containers')
-
     steps {
+        dir('get_containers')
         dockerBuildAndPublish {
             repositoryName('yarshar/getcontainers')
             tag('${GIT_REVISION,length=9}')
@@ -31,9 +30,8 @@ job('nginx') {
         }
     }
 
-    dir('nginx_proxy_to_get_container')
-
     steps {
+        dir('nginx_proxy_to_get_container')
         dockerBuildAndPublish {
             repositoryName('yarshar/nginxproxytogetcontainer')
             tag('${GIT_REVISION,length=9}')
