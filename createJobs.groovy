@@ -1,3 +1,5 @@
+import javaposse.jobdsl.dsl.DslFactory
+
 job('get_containers') {
     scm {
         git('https://github.com/Yd74/Elbit.git') {  node -> // is hudson.plugins.git.GitSCM
@@ -29,7 +31,7 @@ job('nginx') {
         }
     }
 
-    dir('nginx')
+    dir('nginx_proxy_to_get_container')
 
     steps {
         dockerBuildAndPublish {
