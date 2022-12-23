@@ -9,15 +9,16 @@ job('get_containers') {
     }
 
     steps {
-        dir('get_containers')
-        dockerBuildAndPublish {
-            repositoryName('yarshar/getcontainers')
-            tag('${GIT_REVISION,length=9}')
-            registryCredentials('dockerhub')
-            forcePull(false)
-            forceTag(false)
-            createFingerprints(false)
-            skipDecorate()
+        dir('get_containers'){
+            dockerBuildAndPublish {
+                repositoryName('yarshar/getcontainers')
+                tag('${GIT_REVISION,length=9}')
+                registryCredentials('dockerhub')
+                forcePull(false)
+                forceTag(false)
+                createFingerprints(false)
+                skipDecorate()
+            }
         }
     }
 }
@@ -31,15 +32,16 @@ job('nginx') {
     }
 
     steps {
-        dir('nginx_proxy_to_get_container')
-        dockerBuildAndPublish {
-            repositoryName('yarshar/nginxproxytogetcontainer')
-            tag('${GIT_REVISION,length=9}')
-            registryCredentials('dockerhub')
-            forcePull(false)
-            forceTag(false)
-            createFingerprints(false)
-            skipDecorate()
+        dir('nginx_proxy_to_get_container'){
+            dockerBuildAndPublish {
+                repositoryName('yarshar/nginxproxytogetcontainer')
+                tag('${GIT_REVISION,length=9}')
+                registryCredentials('dockerhub')
+                forcePull(false)
+                forceTag(false)
+                createFingerprints(false)
+                skipDecorate()
+            }
         }
     }
 }
