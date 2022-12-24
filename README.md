@@ -2,10 +2,10 @@
 docker network create elbit-net
 
 ###### For running getcontainer Docker image, use the following command:
-docker run --net elbit-net -v /var/run/docker.sock:/var/run/docker.sock -d --name getcontainers yarshar/dolevyarin:6e3f5c033
+docker run --net elbit-net -v /var/run/docker.sock:/var/run/docker.sock -d --name getcontainers yarshar/getcontainers:{imageTag}
 
 ###### For running this Docker image, use the following command:
-docker run --net elbit-net -d -it -p 80:80 nginxproxytogetcontainer
+docker run --net elbit-net -v /var/run/docker.sock:/var/run/docker.sock -d -p 80:80 yarshar/nginxproxytogetcontainer:{imageTag}
 
 ###### You can find all image tags in my public Docker repository: 
-https://hub.docker.com/repository/docker/yarshar/dolevyarin
+https://hub.docker.com/repositories/yarshar
