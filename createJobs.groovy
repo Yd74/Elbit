@@ -9,8 +9,10 @@ job('get_containers') {
     }
 
     steps {
-        dir('get_containers'){
-            dockerBuildAndPublish {
+        dir('get_containers')
+        {
+            dockerBuildAndPublish 
+            {
                 repositoryName('yarshar/getcontainers')
                 tag('${GIT_REVISION,length=9}')
                 registryCredentials('dockerhub')
