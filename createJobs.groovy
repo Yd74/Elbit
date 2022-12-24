@@ -1,4 +1,5 @@
 import javaposse.jobdsl.dsl.DslFactory
+import javaposse.jobdsl.dsl.helpers
 
 job('get_containers') {
     scm {
@@ -16,6 +17,7 @@ job('get_containers') {
                 repositoryName('yarshar/getcontainers')
                 tag('${GIT_REVISION,length=9}')
                 registryCredentials('dockerhub')
+                dockerfilePath('')
                 forcePull(false)
                 forceTag(false)
                 createFingerprints(false)
