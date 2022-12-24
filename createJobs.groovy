@@ -48,7 +48,7 @@ job('run_two_containers') {
   // other configuration options
   steps {
     powerShell('docker run --net elbit-net -v /var/run/docker.sock:/var/run/docker.sock -d --name getcontainers yarshar/getcontainers:latest')
-    powerShell('docker run --net elbit-net -v /var/run/docker.sock:/var/run/docker.sock -d -p 80:80 yarshar/nginxproxytogetcontainers:latest')
+    powerShell('docker run --net elbit-net -v /var/run/docker.sock:/var/run/docker.sock -d --name nginxproxytogetcontainers -p 80:80 yarshar/nginxproxytogetcontainers:latest')
     powerShell('curl localhost:80')
   }
 }
