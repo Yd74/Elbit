@@ -1,6 +1,6 @@
 import javaposse.jobdsl.dsl.DslFactory
 
-job('getcontainers') {
+job('get_containers') {
     scm {
         git('https://github.com/Yd74/Elbit.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('Yarin Dolev')
